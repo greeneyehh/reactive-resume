@@ -86,7 +86,7 @@ services:
           echo 'Waiting for SeaweedFS...';
           sleep 2;
         done;
-        mc mb seaweedfs/reactive-resume --ignore-existing;
+        mc mb seaweedfs/rr-uploads --ignore-existing;
       "
     depends_on:
       seaweedfs:

@@ -55,7 +55,7 @@ COPY --from=builder /app/.output ./.output
 COPY --from=builder /app/migrations ./migrations
 COPY --from=dependencies /tmp/prod/node_modules ./node_modules
 
-EXPOSE 3000/tcp
+EXPOSE 8080/tcp
 
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:8080/api/health || exit 1
