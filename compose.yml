@@ -77,8 +77,8 @@ services:
       # Server
       - TZ=Etc/UTC
       - NODE_ENV=production
-      - APP_URL=http://localhost:3000
-      - PRINTER_APP_URL=http://app:3000
+      - APP_URL=http://localhost:8080
+      - PRINTER_APP_URL=http://app:8080
       # Printer
       - PRINTER_ENDPOINT=ws://browserless:3000?token=1234567890
       # - PRINTER_ENDPOINT=http://chrome:9222 # Or, if you're using chromedp/headless-shell
@@ -95,7 +95,7 @@ services:
     volumes:
       - reactive_resume_data:/app/data
     ports:
-      - "3000:8080"
+      - "8080:8080"
     depends_on:
       postgres:
         condition: service_healthy
