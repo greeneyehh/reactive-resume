@@ -154,7 +154,7 @@ cd reactive-resume
 docker compose up -d
 
 # Access the app
-open http://localhost:3000
+open http://localhost:8080
 ```
 
 For detailed setup instructions, environment configuration, and self-hosting guides, see the [documentation](https://docs.rxresu.me).

@@ -9,7 +9,7 @@ Reactive Resume is a free, open-source resume builder built with TanStack Start 
 ## Development Commands
 
 ```bash
-# Start development server (runs on port 3000)
+# Start development server (runs on port 8080)
 pnpm dev
 
 # Build for production
