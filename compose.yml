@@ -77,6 +77,7 @@ services:
       # Server
       - TZ=Etc/UTC
       - NODE_ENV=production
+      - PORT=8080
       - APP_URL=http://localhost:8080
       - PRINTER_APP_URL=http://app:8080
       # Printer
