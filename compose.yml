@@ -27,7 +27,7 @@ services:
       - TOKEN=1234567890
     healthcheck:
       test:
-        ["CMD", "curl", "-f", "http://localhost:8080/pressure?token=1234567890"]
+        ["CMD", "curl", "-f", "http://localhost:3000/pressure?token=1234567890"]
       interval: 10s
       timeout: 5s
       retries: 10
