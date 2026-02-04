@@ -61,6 +61,14 @@ const getAuthConfig = () => {
 		} satisfies GenericOAuthConfig);
 	}
 
+	// Normalize origins (remove trailing slashes for consistency)
+	const normalizedOrigins = [
+		env.APP_URL.replace(/\/$/, ""),
+		...env.AUTH_TRUSTED_ORIGINS.map((origin) => origin.replace(/\/$/, "")),
+	];
+
+	console.log(`[Better Auth] Trusted origins: ${normalizedOrigins.join(", ")}`);
+
 	return betterAuth({
 		appName: "Reactive Resume",
 
@@ -70,7 +78,7 @@ const getAuthConfig = () => {
 		database: drizzleAdapter(db, { schema, provider: "pg" }),
 
 		telemetry: { enabled: false },
-		trustedOrigins: [env.APP_URL, ...env.AUTH_TRUSTED_ORIGINS],
+		trustedOrigins: normalizedOrigins,
 		advanced: {
 			database: { generateId },
 			useSecureCookies: env.APP_URL.startsWith("https://"),
